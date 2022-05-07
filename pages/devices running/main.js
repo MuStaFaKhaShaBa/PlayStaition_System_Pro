@@ -17,7 +17,7 @@ function getFromLocal(item) {
 function setToLocal(item, arr) {
     window.localStorage.setItem(item, JSON.stringify(arr || []));
 }
-window.setTimeout(()=>window.location = './index.html',(1000 * 60 * 10));
+window.setTimeout(() => window.location = './index.html', (1000 * 60 * 10));
 createDevices();
 function createDevices() {
     do {
@@ -155,14 +155,6 @@ function createDevices() {
             index
         );
     });
-
-    if (contentHolder.innerHTML == '') {
-        Swal.fire(
-            "ليس هناك اجهزه شغاله",
-            '',
-            'question'
-        );
-    }
 }
 function getTime(x) {
     let xx = x.toString().split("");
