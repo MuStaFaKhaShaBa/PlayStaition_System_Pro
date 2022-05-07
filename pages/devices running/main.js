@@ -159,6 +159,7 @@ function createDevices() {
     if (contentHolder.innerHTML == '') {
         Swal.fire(
             "ليس هناك اجهزه شغاله",
+            '',
             'question'
         );
     }
