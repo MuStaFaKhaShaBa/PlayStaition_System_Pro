@@ -1,0 +1,160 @@
+:root {
+    --dark: #1d3557;
+    --semi-dark: #457b9d;
+    --dark-light: #93b7ce;
+    --blue: #0a58ca;
+    --light: #f1faee;
+    --red: #e63946;
+    --white: #fff;
+    --black: #000;
+    --orange: #fb8500;
+    --yellow: #ffb703;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Cairo", sans-serif;
+    overflow: hidden auto;
+    min-height: 100vh;
+}
+::selection{
+    background-color: var(--dark);
+    color: var(--light);
+}
+/* Start NavBar */
+.navbar {
+    background-color: var(--light);
+    padding-block: 20px;
+}
+.navbar .logo {
+    font-size: 35px;
+    color: var(--dark);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.navbar .logo:hover {
+    color: var(--dark-light);
+}
+
+.navbar-nav li a {
+    color: var(--dark);
+    font-weight: bold;
+}
+.navbar-nav li a.active {
+    color: var(--blue);
+    border-top: 3px solid var(--blue);
+}
+@media (max-width:991px) {
+    .navbar-nav li a.active{
+        margin-top: 10px;
+    }
+}
+.navbar .navbar-toggler svg {
+    color: var(--dark);
+    font-size: 25px;
+}
+.navbar .navbar-toggler {
+    border: 1px solid var(--dark);
+}
+.navbar .navbar-toggler:focus {
+    box-shadow: none;
+}
+/* End NavBar */
+
+/* Start Landing */
+.landing {
+    min-height: calc(100vh - 72px);
+}
+.landing .overlay {
+    animation: top-down 5s linear infinite alternate;
+}
+@media (min-width: 768px) {
+    .landing .overlay {
+        max-width: 70vw;
+        left: 50%;
+        transform: translatex(-50%);
+    }
+    
+}
+.landing .row {
+    z-index: 200;
+    margin-inline: 0 !important;
+}
+:is(.options, .results) section {
+    color: var(--white);
+    opacity: .9;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: var(--dark-light);
+}
+@media (max-width:300px) {
+    :is(.options, .results) section{
+        font-size: 5vw;
+    }
+}
+p {
+    margin: 0;
+}
+:is(.options, .results) section:hover {
+    opacity: 1;
+}
+
+.options section {
+    background-color: var(--dark);
+}
+/* End Landing */
+
+/* Alert */
+select ,.swal2-input,
+.swal2-html-container input{
+    border-color: var(--dark) !important;
+    color: var(--dark);
+    background-color: var(--white);
+}
+
+:is(.all-device, select,body,.all-product,.long,.data-table,.drinks)::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--light);
+    border-radius: 5px;
+}
+:is(.all-device, select,body,.all-product,.long,.data-table,.drinks)::-webkit-scrollbar-thumb {
+    background-color: var(--dark-light);
+    border-radius: 5px;
+}
+.swal2-confirm {
+    background-color: var(--dark) !important;
+    color: var(--white);
+}
+.swal2-cancel{
+    background-color: var(--red) !important;
+}
+
+/* drinks container*/
+.drinks{
+    max-width: 150px;
+    max-height: 55px;
+    overflow: auto;
+}
+.drinks::-webkit-scrollbar{
+    width: 5px;
+}
+@keyframes top-down {
+    0% {
+        margin-top: 0;
+    }
+    33% {
+        margin-top: -100px;
+    }
+    66% {
+        margin-top: 0;
+    }
+    100% {
+        margin-top: 60px;
+    }
+}
+

@@ -1,0 +1,151 @@
+body {
+    overflow: auto;
+}
+::selection{
+    background-color: var(--dark-light);
+    color: var(--dark);
+}
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding-block: 30px;
+}
+.name {
+    font-size: 25px;
+    font-weight: bold;
+}
+.name + svg,
+.btn {
+    background-color: var(--dark-light);
+    color: var(--dark);
+    opacity: 0.8;
+    transition: 0.3s;
+}
+.name + svg:hover,
+.btn:hover {
+    opacity: 1;
+    color: var(--white);
+}
+.device {
+    background-color: var(--dark);
+}
+label,
+summary {
+    color: var(--light);
+    font-size: 18px;
+}
+.check{
+    appearance: none;
+    aspect-ratio: 1;
+    background-color: var(--red) !important;
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.check:hover,
+.check:checked{
+    opacity: 1;
+    background-image: url('../../images/check-svgrepo-com.svg');
+}
+
+.device .time-pass p {
+    color: var(--dark-light);
+}
+.device p {
+    font-size: 10px;
+}
+.device span,
+.device p {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--white);
+    text-align: center;
+}
+.total-salary {
+    color: var(--orange);
+}
+.total-salary + p {
+    color: var(--yellow) !important;
+}
+.btn {
+    background-color: var(--dark-light);
+    margin-inline: 5px;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 30px;    
+}
+
+/* Swal Label Inputs Drinks */
+.label-input{
+color: var(--dark);
+} 
+
+@media (min-width: 992px) {
+    .btns .btn {
+        font-size: 14px;
+        padding: 5px 7px;
+    }
+}
+@media (max-width: 991px)  {
+    .btns .btn {
+        font-size: 12px;
+        padding: 5px !important;
+    }
+    .custRow section label{
+        width: 100%;
+        text-align: center;
+        font-size: 15px !important;
+    }
+}
+@media (max-width: 454px) {
+    .content {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    .btn {
+        font-size: 11px;
+    }
+    .name {
+        font-size: 20px;
+    }
+    .device span,
+    .device p {
+        font-size: 3.5vw !important;
+        /* font-weight: normal; */
+    }
+    .device label {
+        font-size: 4vw !important;
+    }
+    .time-start span {
+        font-size: 13px;
+    }
+}
+@media (max-width: 377px) {
+    .time-start label {
+        margin-top: 0px !important;
+    }
+    .btns{
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+    }
+    .btns .btn{
+        width: 40%;
+    }
+}
+
+.device.finish {
+    animation: flash 3s linear infinite alternate;
+}
+
+@keyframes flash {
+    50% {
+        background-color: var(--semi-dark);
+        box-shadow: 0 0 10px 5px var(--red);
+    }
+    100% {
+        background-color: var(--dark);
+        box-shadow: none;
+    }
+}
